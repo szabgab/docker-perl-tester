@@ -48,6 +48,10 @@ jobs:
     outputs:
       perl-versions: ${{ steps.action.outputs.perl-versions }}
     steps:
+      - name: Add tools
+        run:
+          apt-get update
+          apt-get install build-essential
       - name: Perl versions action step
         id: action
         uses: perl-actions/perl-versions@v1.3
