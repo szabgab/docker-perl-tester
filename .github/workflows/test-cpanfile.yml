@@ -48,10 +48,6 @@ jobs:
     outputs:
       perl-versions: ${{ steps.action.outputs.perl-versions }}
     steps:
-      - name: Add tools
-        run:
-          apt-get update
-          apt-get install build-essential
       - name: Perl versions action step
         id: action
         uses: perl-actions/perl-versions@v1.3
@@ -91,6 +87,10 @@ jobs:
     name: Perl ${{ matrix.perl-version }} bookworm
     steps:
       - uses: actions/checkout@v4
+      - name: Add tools
+        run:
+          apt-get update
+          apt-get install build-essential
       - name: Install deps using cpm
         uses: perl-actions/install-with-cpm@v1
         with:
