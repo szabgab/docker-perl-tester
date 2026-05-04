@@ -385,6 +385,7 @@ requires_by_perl 'Test2::Bundle::Extended',
 requires_by_perl 'Test2::Harness',
 	prior 5.010 => skip,
 	prior 5.014 => '==1.000156',
+	prior 5.030 => '==1.000170',
 	;
 
 requires_by_perl 'Test2::Harness::Renderer::JUnit',
