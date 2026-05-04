@@ -37,7 +37,7 @@ RUN cpanm --self-upgrade || \
 
 RUN cpanm -nq App::cpm Carton::Snapshot && rm -rf /root/.cpanm
 
-RUN cpm install -g --show-build-log-on-failure --cpanfile /tmp/cpanfile && rm -rf /root/.perl-cpm
+RUN cpm install -v -g --show-build-log-on-failure --cpanfile /tmp/cpanfile && rm -rf /root/.perl-cpm
 
 RUN if [ "x${CPANOUTDATED}" = "x1" ] ; then cpan-outdated --exclude-core -p | xargs -n1 cpanm ; else cpan-outdated --exclude-core -p; fi
 
