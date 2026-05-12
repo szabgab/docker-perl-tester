@@ -238,9 +238,11 @@ When the build fails we need to know what changed that caused the failure.
 To make it easier here is a list of things that might have changed.
 
 * The change we make to this repository. This is the only visible change.
-* The content (or the availability) of the BASE perl distributions.
-* The GitHub Action runner.
+* The GitHub Action runner. (The virtual machine the job runs on.)
 * The GitHub Actions. We use tags for the various actions and they might point to a different commit.
+* The content (or the availability) of the BASE perl images.
+* The os packages installed in the Dockerfile using `apt-get`.
+* `cpanm` and `App::cpm` installed in the Dockerfile.
 * The CPAN modules. By default we install the most recent release of everything.
 
 # Author
